@@ -1,4 +1,11 @@
-const Contacts = () => {
+import MinigameButton from "./../components/btnMiniGame/btnMiniGame"
+import { useState } from 'react';
+
+
+const Testing = () => {
+	const [testingStarted, setTestingStarted] = useState(false);
+
+
     return (
 		<main className="section">
 			<div className="container">
@@ -6,22 +13,10 @@ const Contacts = () => {
 
 				<ul className="content-list">
 					<li className="content-list__item">
-						<h2 className="title-2">Location</h2>
-						<p>Moscow, Russia</p>
-					</li>
-					<li className="content-list__item">
-						<h2 className="title-2">Telegram / WhatsApp</h2>
-						<p>
-							<a href="tel:+79051234567">+7 (905) 123-45-67</a>
-						</p>
-					</li>
-					<li className="content-list__item">
-						<h2 className="title-2">Email</h2>
-						<p>
-							<a href="mailto:webdev@protonmail.com">
-								webdev@protonmail.com
-							</a>
-						</p>
+						<h2 className="title-2">{testingStarted ? 'Варианты ответа' : 'Начать Тестирование'}</h2>
+							<MinigameButton
+								onClick={() => setTestingStarted(true)}
+							></MinigameButton>
 					</li>
 				</ul>
 			</div>
@@ -29,4 +24,4 @@ const Contacts = () => {
 	);
 }
 
-export default Contacts;
+export default Testing;
