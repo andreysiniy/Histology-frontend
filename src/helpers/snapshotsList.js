@@ -48,10 +48,37 @@ export async function GetAlbums() {
 	return response.data;
 }
 
+export async function GetAlbumPreview(id) {
+	try {
+		const response = await GetImagesByAlbumId(id);
+		return response[0].imageBytes; 
+		} catch (err) {
+		console.log('GetAlbumPreview : ' + err);
+		return null;
+	}
+}
+
 export async function GetAlbumName(id) {
 	const intId = parseInt(id);
 	const response = await axios.get(`${GetAPI()}api/Album/${intId}`);
 	return response.data.name;
+}
+
+export async function CreateNewAlbum(albumName) {
+	try {
+		const response = await axios.post(`${GetAPI()}api/Album/`, 
+		  { name: albumName },
+		  {
+			headers: {
+			  'Content-Type': 'application/json'
+			}
+		  }
+		);
+		return response.data;
+	} catch (err) {
+		console.log('CreateNewAlbum : ' + err);
+		return null;
+	}
 }
 
 

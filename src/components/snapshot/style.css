@@ -1,5 +1,5 @@
 .snapshot {
-	max-width: 370px;
+	max-width: 300px;
 	background-color: var(--snapshot-card-bg);
 	box-shadow: var(--box-shadow);
 	border-radius: 10px;

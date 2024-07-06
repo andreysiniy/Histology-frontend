@@ -40,6 +40,16 @@ const Navbar = () => {
 						</li>
 						<li className="nav-list__item">
 							<NavLink
+								to="/albums"
+								className={({ isActive }) =>
+									isActive ? activeLink : normalLink
+								}
+							>
+								Альбомы
+							</NavLink>
+						</li>
+						<li className="nav-list__item">
+							<NavLink
 								to="/testing"
 								className={({ isActive }) =>
 									isActive ? activeLink : normalLink

@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import Snapshot from "./pages/Snapshot";
 import Testing from "./pages/Testing";
+import Albums from "./pages/Albums";
 
 import ScrollToTop from "./utils/scrollToTop"
 
@@ -19,6 +20,7 @@ function App() {
 				<Navbar />
 				<Routes>
 					<Route path="/" element={<Home />} />
+					<Route path="/albums" element={<Albums />} />
 					<Route path="/gallery" element={<Gallery />} />
 					<Route path="/gallery/:id" element={<Gallery />} />
 					<Route path="/snapshot/:id" element={<Snapshot />} />
