@@ -107,6 +107,12 @@ body {
 
 /* Btn */
 
+.btnUploadContainer {
+	display: flex;
+	justify-content: center;
+	padding-top: 28px;
+}
+
 .btn {
 	display: inline-block;
 	height: 48px;

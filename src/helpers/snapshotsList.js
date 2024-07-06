@@ -43,6 +43,38 @@ export async function GetImagesByAlbumId(id) {
 	  }
 }
 
+export async function GetAlbums() {
+	const response = await axios.get(`${GetAPI()}api/Album`);
+	return response.data;
+}
+
+export async function GetAlbumName(id) {
+	const intId = parseInt(id);
+	const response = await axios.get(`${GetAPI()}api/Album/${intId}`);
+	return response.data.name;
+}
+
+
+export async function UploadImageToAlbum(file, name, albumId) {
+    const formData = new FormData();
+    formData.append('file', file); 
+    formData.append('Name', name); 
+    formData.append('AlbumId', albumId); 
+
+    try {
+        const response = await axios.post(`${GetAPI()}api/Image/`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data', 
+            },
+        });
+        console.log('Response from UploadImageToAlbum:', response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error uploading image:', error);
+        return null;
+    }
+}
+
 
 const gallery = [
 	{

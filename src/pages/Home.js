@@ -1,5 +1,5 @@
 import Header from './../components/header/Header'
-import UploadButton from "./../components/btnUpload/BtnUpload"
+
 
 const Home = () => {
     return (
@@ -30,7 +30,7 @@ const Home = () => {
 							Загружать другие обученные модели машинного обучения 
 							</p>
 						</li>
-						<UploadButton />
+
 					</ul>
 
 				</div>
