@@ -32,6 +32,18 @@ export async function GetImageById(id) {
 	return response.data;
 }
 
+export async function GetImagesByAlbumId(id) {
+	try {
+		const images = await GetImages(); 
+		const filteredImages = images.filter((image) => image.album.albumId === parseInt(id));
+		return filteredImages;
+	  } catch (err) {
+		console.error(err);
+		return []; 
+	  }
+}
+
+
 const gallery = [
 	{
 		title: 'Снимок 1',
