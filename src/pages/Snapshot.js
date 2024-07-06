@@ -42,7 +42,7 @@ const Snapshot = () => {
 					/>
 
 					<div className="snapshot-details__desc">
-						<p>Класс: {image?.category}</p>
+						<p>Класс: {image?.category.replace(/['"]+/g, '')}</p>
 					</div>
 
 				</div>

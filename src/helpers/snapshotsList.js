@@ -43,6 +43,23 @@ export async function GetImagesByAlbumId(id) {
 	  }
 }
 
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+export async function GetRandomImage() {
+	try {
+	const response = await GetImages();
+	const rand = getRandomInt(1, response.length);
+	const randImage = await GetImageById(rand);
+	console.log("rand ", rand);
+	console.log(randImage);
+	return randImage; 
+	} catch (err) {
+		console.log(err);
+	}
+}
+
 export async function GetAlbums() {
 	const response = await axios.get(`${GetAPI()}api/Album`);
 	return response.data;
