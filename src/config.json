@@ -2,6 +2,6 @@
     "BASE_URL": "",
     "BASE_URL_DEV": "http://localhost:3000/",
     "API": "",
-    "API_DEV": "http://localhost:5207/",
+    "API_DEV": "https://localhost:7119/",
     "USE_DEV_API": true
 }

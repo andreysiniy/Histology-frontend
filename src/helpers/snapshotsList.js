@@ -18,6 +18,20 @@ import snapshot06Big from "./../img/gallery/06-big.jpg";
 
 import testImg from "./../img/gallery/test.jpg";
 
+import { GetAPI  } from "./misc";
+import axios from "axios";
+
+
+export async function GetImages() {
+	const response = await axios.get(`${GetAPI()}api/Image`);
+	return response.data;
+}
+
+export async function GetImageById(id) {
+	const response = await axios.get(`${GetAPI()}api/Image/${id}`);
+	return response.data;
+}
+
 const gallery = [
 	{
 		title: 'Снимок 1',
